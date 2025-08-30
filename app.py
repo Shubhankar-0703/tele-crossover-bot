@@ -11,7 +11,10 @@ import threading
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 import yfinance as yf
 import pandas as pd
-import telebot
+try:
+    import telebot
+except ImportError:
+    telebot = None
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -24,10 +27,11 @@ CHAT_ID = os.getenv("CHAT_ID")
 ENV_WATCHLIST = os.getenv("WATCHLIST", "")
 PORT = int(os.getenv("PORT", 5000))
 
-# Initialize bot if token is available
+# Initialize bot if token is available (disabled for web-only deployment)
 bot = None
-if BOT_TOKEN:
-    bot = telebot.TeleBot(BOT_TOKEN)
+# Temporarily disabled to avoid conflicts
+# if BOT_TOKEN and telebot:
+#     bot = telebot.TeleBot(BOT_TOKEN)
 
 WATCHLIST_FILE = "watchlist.json"
 
