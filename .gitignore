@@ -1,0 +1,40 @@
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.egg-info/
+*.egg
+
+# ---- Virtual environment ----
+.venv/
+env/
+venv/
+
+# ---- Environment variables ----
+.env
+
+# ---- Logs ----
+*.log
+*.out
+
+# ---- Jupyter / IPython ----
+.ipynb_checkpoints
+
+# ---- IDE / Editor settings ----
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ---- OS files ----
+.DS_Store
+Thumbs.db
+
+# ---- Data files (optional) ----
+watchlist.json
+
+# ---- Backup files ----
+*.bak
+*.tmp
