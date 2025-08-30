@@ -1,5 +1,6 @@
-﻿yfinance
+yfinance
 pandas
 schedule
 pyTelegramBotAPI
 python-dotenv
+Flask
