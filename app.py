@@ -307,11 +307,8 @@ if __name__ == "__main__":
         except Exception as ex:
             logging.error("Failed creating watchlist.json: %s", ex)
     
-    # Start Telegram bot in background thread if configured
-    if bot:
-        bot_thread = threading.Thread(target=start_telegram_bot, daemon=True)
-        bot_thread.start()
-        logging.info("Started Telegram bot in background")
+    # Skip Telegram bot for web-only deployment
+    logging.info("Telegram bot disabled for web-only deployment")
     
     # Start Flask web app
     logging.info(f"Starting web app on port {PORT}")
